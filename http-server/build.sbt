@@ -5,4 +5,8 @@ lazy val root = (project in file(".")).settings(
     )),
   name := "http-server",
   scalafmtOnCompile := true,
+  libraryDependencies ++= Seq(
+    "com.typesafe.akka" %% "akka-http" % "10.1.5",
+    "com.typesafe.akka" %% "akka-stream" % "2.5.12",
+  ),
 )
