@@ -17,8 +17,10 @@ object WebServer {
     val interface = config.getString("http.interface")
     val port = config.getInt("http.port")
 
+    val factor = config.getInt("response-body-length-factor")
+
     val route = {
-      complete("ok")
+      complete("ok" * factor)
     }
 
     val bindingFuture = Http().bindAndHandle(route, interface, port)
